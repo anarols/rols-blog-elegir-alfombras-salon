@@ -938,7 +938,7 @@
          alineado con la columna de lectura (misma rejilla que el cuerpo) ---------- */
   .phero{ padding:0; }
   .phero > img{ display:block; width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; object-position:center 60%; background:var(--surface-deep); }
-  @media (min-width:900px){ .phero > img{ aspect-ratio:auto; height:clamp(320px, 28vw, 480px); } }
+  @media (min-width:900px){ .phero > img{ aspect-ratio:auto; height:clamp(360px, 32vw, 540px); } }
   .ph-txt{ min-width:0; width:100%; max-width:860px; margin:0 auto 40px; display:flex; flex-direction:column; align-items:flex-start; }
   @media (min-width:1100px){ .ph-txt{ margin-bottom:56px; } }
   .crumbs{ display:flex; flex-wrap:wrap; justify-content:flex-start; align-items:center; gap:4px 10px; margin:0; padding:0; list-style:none;
@@ -947,7 +947,7 @@
   .crumbs a:hover{ color:var(--fg); }
   .crumbs li + li::before{ content:"/"; margin-right:10px; color:var(--line-strong); }
   .ph-txt h1{ margin-top:22px; font-size:clamp(1.9rem,3.4vw,3rem); line-height:1.1; letter-spacing:-.02em; max-width:30ch; }
-  .ph-txt .lead{ margin-top:20px; font-size:13.5px; font-weight:300; line-height:1.8; color:var(--muted); max-width:64ch; }
+  .ph-txt .lead{ margin-top:20px; font-size:13.5px; font-weight:300; line-height:1.8; color:rgba(51,58,60,.88); max-width:64ch; }
   .pmeta{ display:flex; flex-wrap:wrap; justify-content:flex-start; align-items:center; gap:6px 18px; margin-top:22px;
     font-size:10.5px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:var(--soft); }
   .pmeta b{ font-weight:500; color:var(--fg); }
@@ -986,7 +986,9 @@
   /* ---------- texto del artículo (columna centrada, elementos genéricos) ---------- */
   .prose{ min-width:0; width:100%; max-width:860px; margin-inline:auto; }
   .prose p, .prose ul, .prose ol, .prose h2, .prose h3{ max-width:860px; margin-inline:auto; }
-  .prose p{ font-size:13.5px; font-weight:300; line-height:1.8; color:var(--muted); }
+  /* texto de lectura más oscuro que --muted, para que se lea mejor */
+  .prose{ --lectura:rgba(51,58,60,.88); }
+  .prose p{ font-size:13.5px; font-weight:300; line-height:1.8; color:var(--lectura); }
   /* texto justificado; con guiones automáticos (lang="es") para que no queden huecos grandes entre palabras */
   .prose p, .prose li{ text-align:justify; -webkit-hyphens:auto; hyphens:auto; }
   .prose .autorbox p:not(.bio){ text-align:left; }
@@ -996,7 +998,7 @@
   .prose p a:hover, .prose li a:hover{ text-decoration-color:var(--fg); }
 
   .prose ul, .prose ol{ padding:0; list-style:none; }
-  .prose ul li, .prose ol li{ position:relative; padding-left:24px; font-size:13.5px; font-weight:300; line-height:1.8; color:var(--muted); }
+  .prose ul li, .prose ol li{ position:relative; padding-left:24px; font-size:13.5px; font-weight:300; line-height:1.8; color:var(--lectura); }
   .prose ul li + li, .prose ol li + li{ margin-top:8px; }
   .prose ul li::before{ content:""; position:absolute; left:4px; top:.82em; width:5px; height:5px; border-radius:50%; background:var(--line-strong); }
 
